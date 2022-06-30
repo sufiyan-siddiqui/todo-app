@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+/* font-family: 'PT Sans', sans-serif; 
+font-family: 'Comfortaa', cursive;
+font-family: 'Palette Mosaic', cursive;*/
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.title {
+  font-size: calc(1.525rem + 3.3vw);
+}
+.cursor i{
+  font-size: 2rem;
+  width: 6%;
+  height: 6%;
+  color: yellowgreen;
+  position: absolute;
+  transform: translate(10%,-20%);
+  z-index: 3;
+  pointer-events: none;
+}
+body{
+  background:linear-gradient(rgba(8, 8, 8, 0.7),rgba(12, 15, 15, 0.7)), url(https://static.theceomagazine.net/wp-content/uploads/2019/11/20092727/Too-busy-for-life.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  font-family: 'Comfortaa', cursive; 
+}
+h1{
+  font-family: 'PT Sans', sans-serif;
+  color: black;
+  padding: 0.8rem;
+  background: goldenrod;
+  box-shadow: 5px 6px red;
+}
+header{
+  font-size: 1.2rem;
+  animation: goup 1s ease 4 alternate;
+  animation-delay: 8s;
+}
+@keyframes goup {
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform: translateY(30%);
+  }
+}
+header, form{
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input, form button{
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: azure;
+}
+
+form button{
+  color: #e73504;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s linear ;
+}
+form button:hover{
+  background: #e93706;
+  color: aliceblue;
+  cursor: -moz-grab;
+}
+.todo-con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list{
+  min-width: 30%;
+  list-style: none;
+}
+.todo{
+  margin: 0.5rem;
+  background: aliceblue;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.todo li{
+  flex: 1;
+}
+
+.trash-btn, .completed-btn{
+  background: #e73604;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.completed-btn{
+  background: teal;
+}
+.todo-item{
+  padding: 0.5rem;
+}
+.fa-trash, .fa-check{
+  pointer-events: none;
+}
+.completed{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.fall{
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  color: #ff6f47;
+  width: 10rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.select{
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.select::after{
+  content: "\25BC";
+  height: 10rem;
+  position: absolute;
+  background: #ff6f47;
+  top: 25%;
+  right: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.select:hover::after{
+  background: black;
+  color: #ff6f47;
+}
+.load{
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #53a76c;
+  transition: all .3s ease-in; 
+}
+.load i{
+  position: absolute;
+}
+#item1{
+  color: hotpink;
+  font-size: 4rem;
+  top: 30%;
+  left: 38%;
+  animation: loading infinite alternate 1s 0s;
+}
+#item2{
+  color: goldenrod;
+  font-size: 4rem;
+  top: 33%;
+  left: 58%;
+  animation: loading infinite alternate 1s 0.3s;
+}
+#item3{
+  color: crimson;
+  font-size: 4rem;
+  top: 65%;
+  left: 55%;
+  animation: loading infinite alternate 1s 0.5s;
+}
+#item4{
+  color: brown;
+  font-size: 4rem;
+  top: 60%;
+  left: 40%;
+  animation: loading infinite alternate 1s 0.7s;
+}
+#item5{
+  color: green;
+  font-size: 4rem;
+  top: 45%;
+  left: 47%;
+  animation: loading infinite alternate 1s 0.9s;
+}
+@keyframes loading {
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform: translateY(30%);
+  }
+  
+}
+.load.active{
+  opacity: 0;
+  pointer-events: none;
+}
+.cursor.active{
+  display: none;
+}
+ /*------------------------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------------------------------*/
+@media (max-width: 600px){
+  h1{
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  form input, form button{
+    font-size: 1.5rem
+  }
+  .todo{
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  form input{
+    width: 70vw;
+  }
+  .trash-btn, .completed-btn{
+    font-size: .8rem;
+  }
+  .cursor{
+    display: none;
+  }
+  #item1{
+    font-size: 3rem;
+    top: 30%;
+    left: 28%;
+    animation: loading infinite alternate 1s 0s;
+  }
+  #item2{
+    font-size: 3rem;
+    top: 33%;
+    left: 65%;
+    animation: loading infinite alternate 1s 0.3s;
+  }
+  #item3{
+    font-size: 3rem;
+    top: 65%;
+    left: 65%;
+    animation: loading infinite alternate 1s 0.5s;
+  }
+  #item4{
+    font-size: 3.5rem;
+    top: 60%;
+    left: 30%;
+    animation: loading infinite alternate 1s 0.7s;
+  }
+  #item5{
+    font-size: 3.5rem;
+    top: 48%;
+    left: 43%;
+    animation: loading infinite alternate 1s 0.9s;
+  }
+}
+@media (max-width: 800px){
+  #item1{
+    font-size: 3rem;
+    top: 30%;
+    left: 28%;
+    animation: loading infinite alternate 1s 0s;
+  }
+  #item2{
+    font-size: 3rem;
+    top: 33%;
+    left: 65%;
+    animation: loading infinite alternate 1s 0.3s;
+  }
+  #item3{
+    font-size: 3rem;
+    top: 65%;
+    left: 65%;
+    animation: loading infinite alternate 1s 0.5s;
+  }
+  #item4{
+    font-size: 3.5rem;
+    top: 60%;
+    left: 30%;
+    animation: loading infinite alternate 1s 0.7s;
+  }
+  #item5{
+    font-size: 3.5rem;
+    top: 48%;
+    left: 43%;
+    animation: loading infinite alternate 1s 0.9s;
+  }
+  .cursor{
+    display: none;
+  }
+}
